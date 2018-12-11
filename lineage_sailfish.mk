@@ -3,7 +3,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # Inherit Bootleggers product configuration
-$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/marlin/aosp_sailfish.mk)
@@ -11,7 +11,7 @@ $(call inherit-product, device/google/marlin/aosp_sailfish.mk)
 include device/google/marlin/sailfish/device-bootleg.mk
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := bootleg_sailfish
+PRODUCT_NAME := lineage_sailfish
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel
 TARGET_MANUFACTURER := Google
@@ -23,7 +23,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/sailfish/sailfish:9/PQ1A.181205.002.A1/5129870:user/release-keys
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bootleggers.maintainer=shagbag913
 
 $(call inherit-product-if-exists, vendor/google/marlin/marlin-vendor.mk)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
